@@ -1,5 +1,7 @@
 # 🔒 LLM Safety Auditor
 
+[![CI](https://github.com/shaikn6/llm-safety-auditor-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/shaikn6/llm-safety-auditor-demo/actions/workflows/ci.yml)
+
 **Red-teams an LLM with 70 adversarial prompts across 10 categories mapped to 8 of the OWASP LLM Top 10 (2023), and flags unsafe answers. On 100 hand-labelled Qwen answers the detector scores precision 0.82 and recall 0.82 against the reviewer, held out by prompt (optimistic; see Methodology & limitations).**
 
 Interactive **red-teaming dashboard** for large language models. Runs **70 hand-written adversarial prompts** across 10 attack categories, scores responses against the **OWASP LLM Top 10 (2023)**, and can export a structured audit report as JSON or PDF (`auditor.report_generator`). The default view is a **comparative scorecard of real recorded audits**; the scripted mock is a clearly labelled fallback.
@@ -100,3 +102,11 @@ FastAPI · sentence-transformers · reportlab · Streamlit
 
 - 💻 Source: [github.com/shaikn6/llm-safety-auditor](https://github.com/shaikn6/llm-safety-auditor)
 - 👤 Author: [Nagizaaz Shaik](https://github.com/shaikn6) · [LinkedIn](https://linkedin.com/in/nagizaazshaik)
+
+## Run locally
+
+```bash
+pip install -r requirements.txt pytest
+streamlit run app.py
+python -m pytest -q
+```
